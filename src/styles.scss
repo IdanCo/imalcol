@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Alef&display=swap');
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Alef'; }
+
+$font-family-sans-serif: 'Alef';
+$font-size-base: 2rem;
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

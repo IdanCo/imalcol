@@ -1,0 +1,10 @@
+<div class="d-flex justify-content-center align-items-center flex-column">
+  <div>אם על כל</div>
+  <app-counter [value]="1" [locked]="true"></app-counter>
+  <div>צריך לשים</div>
+  <app-counter [value]="waterCups" (valueChange)="onWaterCupsChange($event)"></app-counter>
+  <div>אז על כל</div>
+  <app-counter [value]="riceCups" (valueChange)="onRiceCupsChange($event)"></app-counter>
+  <div>צריך לשים</div>
+  <app-counter [value]="waterCups * riceCups" [locked]="true"></app-counter>
+</div>

@@ -1,0 +1,13 @@
+<div class="wrapper d-flex justify-content-center align-items-center">
+  <div class="right mat-typography" *ngIf="!locked">
+    <button mat-mini-fab color="accent" (click)="onAdd()"  [disabled]="value > 9">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+  <div class="center value">{{ value }}</div>
+  <div class="left mat-typography" *ngIf="!locked">
+    <button mat-mini-fab color="accent" (click)="onRemove()" [disabled]="value < 1">
+      <mat-icon>remove</mat-icon>
+    </button>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
-const STEP = 0.5;
+const STEP = 0.25;
 
 @Component({
   selector: 'app-counter',

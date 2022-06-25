@@ -1,7 +1,11 @@
+.wrapper {
+  touch-action: manipulation;
+}
+
 .value {
   text-align: center;
-  font-size: 8rem;
+  font-size: 6rem;
   font-weight: bold;
   line-height: 1;
-  width: 200px;
+  width: 220px;
 }

@@ -3,10 +3,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Alef&display=swap');
 
 html, body { height: 100%; }
-body { margin: 0; font-family: 'Alef'; }
+body { margin: 0; font-family: 'Alef'; touch-action: manipulation; }
 
 $font-family-sans-serif: 'Alef';
 $font-size-base: 2rem;
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+
+* {
+  touch-action: manipulation;
+}

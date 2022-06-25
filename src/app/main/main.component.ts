@@ -9,8 +9,10 @@ import { map, shareReplay } from 'rxjs/operators';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent {
-  waterCups = 2;
-  riceCups = 1.5;
+  baseRiceCups = 1
+  baseWaterCups = 2;
+
+  actualRiceCups = 1.5;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -21,10 +23,14 @@ export class MainComponent {
   constructor(private breakpointObserver: BreakpointObserver) {}
 
   onWaterCupsChange(newValue: number) {
-    this.waterCups = newValue;
+    this.baseWaterCups = newValue;
   }
 
   onRiceCupsChange(newValue: number) {
-    this.riceCups = newValue;
+    this.actualRiceCups = newValue;
+  }
+
+  onBasicRiceCupsChange(newValue: number) {
+    this.baseRiceCups = newValue;
   }
 }

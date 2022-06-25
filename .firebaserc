@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "imalcol": {
+      "hosting": {
+        "imalcol": [
+          "imalcol"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "imalcol"
+  }
+}

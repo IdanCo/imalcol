@@ -1,6 +1,13 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 const STEP = 0.25;
+const PRECISION = 1000.0
+const getStepRemainder = (num: number) => {
+  num *= PRECISION
+  const step = STEP * PRECISION
+  const remainder = num % step
+  return remainder / PRECISION
+}
 
 @Component({
   selector: 'app-counter',
@@ -18,12 +25,19 @@ export class CounterComponent implements OnInit {
   }
 
   onAdd() {
-    const newValue = this.value + STEP;
+    const remainder = getStepRemainder(this.value)
+    const newValue = (this.value + STEP - remainder)
     this.valueChange.emit(newValue);
   }
 
   onRemove() {
-    const newValue = this.value - STEP;
+    const remainder = getStepRemainder(this.value) || STEP
+    const newValue = (this.value - remainder)
+    this.valueChange.emit(newValue);
+  }
+
+  onChange(event: any) {
+    const newValue = parseFloat(event.target.value) || 0;
     this.valueChange.emit(newValue);
   }
 }

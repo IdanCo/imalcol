@@ -26,13 +26,13 @@ export class CounterComponent implements OnInit {
 
   onAdd() {
     const remainder = getStepRemainder(this.value)
-    const newValue = (this.value + STEP - remainder)
+    const newValue = this.value + STEP - remainder
     this.valueChange.emit(newValue);
   }
 
   onRemove() {
-    const remainder = getStepRemainder(this.value) || STEP
-    const newValue = (this.value - remainder)
+    const remainder = getStepRemainder(this.value)
+    const newValue = this.value - (remainder || STEP)
     this.valueChange.emit(newValue);
   }
 

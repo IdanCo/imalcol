@@ -1,12 +1,12 @@
 <div class="wrapper d-flex justify-content-center align-items-center">
   <div class="right mat-typography" *ngIf="!locked">
-    <button mat-mini-fab color="accent" (click)="onAdd()"  [disabled]="value > 9.5">
+    <button mat-mini-fab color="accent" (click)="onAdd()"  [disabled]="value >= 9.75">
       <mat-icon>add</mat-icon>
     </button>
   </div>
-  <div class="center value">{{ value | number: '1.0-2' }}</div>
+  <input type="number" class="center value silent_number" (keyup)="onChange($event)" (change)="onChange($event)" value="{{ value | number: '1.0-3' }}" />
   <div class="left mat-typography" *ngIf="!locked">
-    <button mat-mini-fab color="accent" (click)="onRemove()" [disabled]="value < 0.5">
+    <button mat-mini-fab color="accent" (click)="onRemove()" [disabled]="value <= 0.25">
       <mat-icon>remove</mat-icon>
     </button>
   </div>
